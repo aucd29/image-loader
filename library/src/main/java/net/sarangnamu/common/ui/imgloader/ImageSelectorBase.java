@@ -20,6 +20,7 @@ package net.sarangnamu.common.ui.imgloader;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.StateListDrawable;
+import android.os.Build;
 
 public abstract class ImageSelectorBase {
     protected static final String DRAWABLE = "drawable";
@@ -65,7 +66,12 @@ public abstract class ImageSelectorBase {
         return context.getResources().getIdentifier(name, DRAWABLE, context.getPackageName());
     }
 
+    @SuppressWarnings("deprecation")
     protected Drawable getDrawable(Context context, int id) {
+        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.JELLY_BEAN) {
+            return context.getResources().getDrawable(id, null);
+        }
+
         return context.getResources().getDrawable(id);
     }
 
