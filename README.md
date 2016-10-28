@@ -1,4 +1,5 @@
 # image-loader
+[![Build Status](https://travis-ci.org/aucd29/image-loader.svg?branch=master)](https://travis-ci.org/aucd29/image-loader)
 
 Add it to your build.gradle with:
 ```gradle
